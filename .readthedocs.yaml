@@ -1,0 +1,34 @@
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Build documentation.
+sphinx:
+   configuration: docs/source/conf.py
+
+# Optionally build docs in additional formats (PDF).
+formats:
+   - pdf
+
+# Optionally set the version of Python.
+# Optionally set also requirements and install.
+#
+# .. note: For this simple template the requirements.txt file contains
+#          all the package and sphinx required libraries. However, in
+#          general is a better practice to keep only the essential
+#          libraries in requirements.txt.
+#
+#          Additional libraries required to build the documentation (e.g.
+#          sphinx, sphinx-rtd-theme, sphinx-gallery or libraries for
+#          visualisation like pyplot or seaborn) should be included in a
+#          docs/requirements.txt.
+#
+python:
+   version: 3.7
+   install:
+    - requirements: ./requirements.txt
+    - method: pip
+      path: .
