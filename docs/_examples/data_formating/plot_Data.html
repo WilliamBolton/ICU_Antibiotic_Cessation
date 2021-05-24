@@ -42,7 +42,9 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Variability of treatment duration" href="plot_Variability%20of%20treatment%20duration.html" />
+    <link rel="prev" title="One Patient example" href="one_patient.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,8 +94,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/setup.html">Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Example Galleries</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">The tutorial gallery</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">The tutorial gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main_full.html">Grouping Antibiotics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one_patient.html">One Patient example</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MIMIC DF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_Variability%20of%20treatment%20duration.html">Variability of treatment duration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_antibiotic_analysis.html">Antibiotic analysis</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -142,13 +151,15 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="index.html">The tutorial gallery</a> &raquo;</li>
+        
       <li>MIMIC DF</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/_examples/data_formating/Data.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/_examples/data_formating/plot_Data.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,11 +174,165 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-data-py"><span class="std std-ref">here</span></a>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-plot-data-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="mimic-df">
-<span id="sphx-glr-examples-data-formating-data-py"></span><h1>MIMIC DF<a class="headerlink" href="#mimic-df" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-examples-data-formating-plot-data-py"></span><h1>MIMIC DF<a class="headerlink" href="#mimic-df" title="Permalink to this headline">¶</a></h1>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/wb1115/ICU_Antibiotic_Cessation/main/examples/data_formating/plot_Data.py:39: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  filtered_antibiotics[&#39;length_of_treatment&#39;] = filtered_antibiotics[&#39;stoptime&#39;] - filtered_antibiotics[&#39;starttime&#39;]
+(2149, 11)
+(21546, 16)
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 1430858 entries, 0 to 1430857
+Data columns (total 38 columns):
+ #   Column               Non-Null Count    Dtype
+---  ------               --------------    -----
+ 0   subject_id           1430858 non-null  int64
+ 1   hadm_id              1430858 non-null  int64
+ 2   stay_id              1430858 non-null  int64
+ 3   first_careunit       1430858 non-null  object
+ 4   last_careunit        1430858 non-null  object
+ 5   intime               1430858 non-null  object
+ 6   outtime              1430858 non-null  object
+ 7   los                  1430858 non-null  float64
+ 8   seq_num              1430858 non-null  int64
+ 9   icd_code             1430858 non-null  object
+ 10  icd_version          1430858 non-null  int64
+ 11  antibiotic           1430858 non-null  object
+ 12  route                1430858 non-null  object
+ 13  starttime            1430858 non-null  datetime64[ns]
+ 14  stoptime             1430858 non-null  datetime64[ns]
+ 15  length_of_treatment  1430858 non-null  timedelta64[ns]
+ 16  microevent_id        1430858 non-null  int64
+ 17  micro_specimen_id    1430858 non-null  int64
+ 18  chartdate            1430858 non-null  object
+ 19  charttime            1430858 non-null  object
+ 20  spec_itemid          1430858 non-null  int64
+ 21  spec_type_desc       1430858 non-null  object
+ 22  test_seq             1430858 non-null  int64
+ 23  storedate            1426508 non-null  object
+ 24  storetime            1425985 non-null  object
+ 25  test_itemid          1430858 non-null  int64
+ 26  test_name            1430858 non-null  object
+ 27  org_itemid           651549 non-null   float64
+ 28  org_name             651549 non-null   object
+ 29  isolate_num          651549 non-null   float64
+ 30  quantity             0 non-null        object
+ 31  ab_itemid            539364 non-null   float64
+ 32  ab_name              539364 non-null   object
+ 33  dilution_text        514617 non-null   object
+ 34  dilution_comparison  514485 non-null   object
+ 35  dilution_value       514485 non-null   float64
+ 36  interpretation       539364 non-null   object
+ 37  comments             1235044 non-null  object
+dtypes: datetime64[ns](2), float64(5), int64(10), object(20), timedelta64[ns](1)
+memory usage: 425.7+ MB
+None
+(1430858, 38)
+Index([&#39;subject_id&#39;, &#39;hadm_id&#39;, &#39;stay_id&#39;, &#39;first_careunit&#39;, &#39;last_careunit&#39;,
+       &#39;intime&#39;, &#39;outtime&#39;, &#39;los&#39;, &#39;seq_num&#39;, &#39;icd_code&#39;, &#39;icd_version&#39;,
+       &#39;antibiotic&#39;, &#39;route&#39;, &#39;starttime&#39;, &#39;stoptime&#39;, &#39;length_of_treatment&#39;,
+       &#39;microevent_id&#39;, &#39;micro_specimen_id&#39;, &#39;chartdate&#39;, &#39;charttime&#39;,
+       &#39;spec_itemid&#39;, &#39;spec_type_desc&#39;, &#39;test_seq&#39;, &#39;storedate&#39;, &#39;storetime&#39;,
+       &#39;test_itemid&#39;, &#39;test_name&#39;, &#39;org_itemid&#39;, &#39;org_name&#39;, &#39;isolate_num&#39;,
+       &#39;quantity&#39;, &#39;ab_itemid&#39;, &#39;ab_name&#39;, &#39;dilution_text&#39;,
+       &#39;dilution_comparison&#39;, &#39;dilution_value&#39;, &#39;interpretation&#39;, &#39;comments&#39;],
+      dtype=&#39;object&#39;)
+&lt;bound method NDFrame.head of          subject_id   hadm_id   stay_id  ... dilution_value interpretation                                           comments
+0          10656173  25778760  30001555  ...            NaN            NaN                                                NaN
+1          10656173  25778760  30001555  ...            NaN            NaN                                                NaN
+2          10656173  25778760  30001555  ...            NaN            NaN                                       NO GROWTH.
+3          10656173  25778760  30001555  ...            NaN            NaN  NEGATIVE FOR LEGIONELLA SEROGROUP 1 ANTIGEN.  ...
+4          10656173  25778760  30001555  ...            NaN            NaN  &lt;10 PMNs and &lt;10 epithelial cells/100X field. ...
+...             ...       ...       ...  ...            ...            ...                                                ...
+1430853    15689523  23914765  39918058  ...            NaN            NaN  Negative for toxigenic C. difficile by the Ill...
+1430854    15689523  23914765  39918058  ...            NaN            NaN  NO ACID FAST BACILLI SEEN ON CONCENTRATED SMEA...
+1430855    15689523  23914765  39918058  ...            NaN            NaN  NO ACID FAST BACILLI SEEN ON CONCENTRATED SMEA...
+1430856    15689523  23914765  39918058  ...            NaN            NaN                        NO MYCOBACTERIA ISOLATED.
+1430857    15689523  23914765  39918058  ...            NaN            NaN                        NO MYCOBACTERIA ISOLATED.
+
+[1430858 rows x 38 columns]&gt;
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 800 entries, 0 to 799
+Data columns (total 38 columns):
+ #   Column               Non-Null Count  Dtype
+---  ------               --------------  -----
+ 0   subject_id           800 non-null    int64
+ 1   hadm_id              800 non-null    int64
+ 2   stay_id              800 non-null    int64
+ 3   first_careunit       800 non-null    object
+ 4   last_careunit        800 non-null    object
+ 5   intime               800 non-null    object
+ 6   outtime              800 non-null    object
+ 7   los                  800 non-null    float64
+ 8   seq_num              800 non-null    int64
+ 9   icd_code             800 non-null    object
+ 10  icd_version          800 non-null    int64
+ 11  antibiotic           800 non-null    object
+ 12  route                800 non-null    object
+ 13  starttime            800 non-null    datetime64[ns]
+ 14  stoptime             800 non-null    datetime64[ns]
+ 15  length_of_treatment  800 non-null    timedelta64[ns]
+ 16  microevent_id        800 non-null    int64
+ 17  micro_specimen_id    800 non-null    int64
+ 18  chartdate            800 non-null    object
+ 19  charttime            800 non-null    object
+ 20  spec_itemid          800 non-null    int64
+ 21  spec_type_desc       800 non-null    object
+ 22  test_seq             800 non-null    int64
+ 23  storedate            784 non-null    object
+ 24  storetime            784 non-null    object
+ 25  test_itemid          800 non-null    int64
+ 26  test_name            800 non-null    object
+ 27  org_itemid           48 non-null     float64
+ 28  org_name             48 non-null     object
+ 29  isolate_num          48 non-null     float64
+ 30  quantity             0 non-null      object
+ 31  ab_itemid            0 non-null      float64
+ 32  ab_name              0 non-null      object
+ 33  dilution_text        0 non-null      object
+ 34  dilution_comparison  0 non-null      object
+ 35  dilution_value       0 non-null      float64
+ 36  interpretation       0 non-null      object
+ 37  comments             768 non-null    object
+dtypes: datetime64[ns](2), float64(5), int64(10), object(20), timedelta64[ns](1)
+memory usage: 243.8+ KB
+None
+(800, 38)
+Index([&#39;subject_id&#39;, &#39;hadm_id&#39;, &#39;stay_id&#39;, &#39;first_careunit&#39;, &#39;last_careunit&#39;,
+       &#39;intime&#39;, &#39;outtime&#39;, &#39;los&#39;, &#39;seq_num&#39;, &#39;icd_code&#39;, &#39;icd_version&#39;,
+       &#39;antibiotic&#39;, &#39;route&#39;, &#39;starttime&#39;, &#39;stoptime&#39;, &#39;length_of_treatment&#39;,
+       &#39;microevent_id&#39;, &#39;micro_specimen_id&#39;, &#39;chartdate&#39;, &#39;charttime&#39;,
+       &#39;spec_itemid&#39;, &#39;spec_type_desc&#39;, &#39;test_seq&#39;, &#39;storedate&#39;, &#39;storetime&#39;,
+       &#39;test_itemid&#39;, &#39;test_name&#39;, &#39;org_itemid&#39;, &#39;org_name&#39;, &#39;isolate_num&#39;,
+       &#39;quantity&#39;, &#39;ab_itemid&#39;, &#39;ab_name&#39;, &#39;dilution_text&#39;,
+       &#39;dilution_comparison&#39;, &#39;dilution_value&#39;, &#39;interpretation&#39;, &#39;comments&#39;],
+      dtype=&#39;object&#39;)
+&lt;bound method NDFrame.head of      subject_id   hadm_id   stay_id  ... dilution_value interpretation                                           comments
+0      10656173  25778760  30001555  ...            NaN            NaN                                                NaN
+1      10656173  25778760  30001555  ...            NaN            NaN                                                NaN
+2      10656173  25778760  30001555  ...            NaN            NaN                                       NO GROWTH.
+3      10656173  25778760  30001555  ...            NaN            NaN  NEGATIVE FOR LEGIONELLA SEROGROUP 1 ANTIGEN.  ...
+4      10656173  25778760  30001555  ...            NaN            NaN  &lt;10 PMNs and &lt;10 epithelial cells/100X field. ...
+..          ...       ...       ...  ...            ...            ...                                                ...
+795    10656173  25778760  37985659  ...            NaN            NaN                                       NO GROWTH.
+796    10656173  25778760  37985659  ...            NaN            NaN  MIXED BACTERIAL FLORA ( &gt;= 3 COLONY TYPES), CO...
+797    10656173  25778760  37985659  ...            NaN            NaN                        NO MYCOBACTERIA ISOLATED.
+798    10656173  25778760  37985659  ...            NaN            NaN                                                ___
+799    10656173  25778760  37985659  ...            NaN            NaN                                                ___
+
+[800 rows x 38 columns]&gt;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
  8
  9
@@ -319,13 +484,13 @@ to download the full example code</p>
  <span class="n">one_patient_condensed</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;One_patient_condensed_10656173.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-data-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  33.920 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-plot-data-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/160037886816494c8497aba7cad8412f/Data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Data.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/c31cbe2e400c022cc867fcbab9310e3c/plot_Data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_Data.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/83cbad5897bf8a448bdc058718917f52/Data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Data.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/45a23c90b2fe8f2e6cfb5273d3e10169/plot_Data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_Data.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -336,6 +501,10 @@ to download the full example code</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="plot_Variability%20of%20treatment%20duration.html" class="btn btn-neutral float-right" title="Variability of treatment duration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="one_patient.html" class="btn btn-neutral float-left" title="One Patient example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

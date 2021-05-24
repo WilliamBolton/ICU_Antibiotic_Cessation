@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Variability of treatment duration &mdash; fyp2020-username 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Antibiotic analysis" href="plot_antibiotic_analysis.html" />
+    <link rel="prev" title="MIMIC DF" href="plot_Data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fyp2020-username
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/setup.html">Tutorial</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Example Galleries</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">The tutorial gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main_full.html">Grouping Antibiotics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one_patient.html">One Patient example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_Data.html">MIMIC DF</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Variability of treatment duration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_antibiotic_analysis.html">Antibiotic analysis</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fyp2020-username</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">The tutorial gallery</a> &raquo;</li>
+        
+      <li>Variability of treatment duration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/_examples/data_formating/plot_Variability of treatment duration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-plot-variability-of-treatment-duration-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="variability-of-treatment-duration">
+<span id="sphx-glr-examples-data-formating-plot-variability-of-treatment-duration-py"></span><h1>Variability of treatment duration<a class="headerlink" href="#variability-of-treatment-duration" title="Permalink to this headline">¶</a></h1>
+<img alt="Treatment length For cefepime_vancomycin" class="sphx-glr-single-img" src="_examples/data_formating/images/sphx_glr_plot_Variabilityoftreatmentduration_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>       Unnamed: 0  subject_id   hadm_id   stay_id icd_code       date                                antibiotics  consecutive  treatment_length                    antibiotics_clean
+0               0    10004733  27411876  39635619    99731 2174-12-04  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+1               1    10004733  27411876  39635619    99731 2174-12-05  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+2               2    10004733  27411876  39635619    99731 2174-12-06  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+3               3    10004733  27411876  39635619    99731 2174-12-07  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+4               4    10004733  27411876  39635619    99731 2174-12-08  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+...           ...         ...       ...       ...      ...        ...                                        ...          ...               ...                                  ...
+25696       25696    19997367  20617667  35616526    99731 2126-05-07                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25697       25697    19997367  20617667  35616526    99731 2126-05-08                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25698       25698    19997367  20617667  35616526    99731 2126-05-09                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25699       25699    19997367  20617667  35616526    99731 2126-05-10                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25700       25700    19997367  20617667  35616526    99731 2126-05-11                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+
+[25701 rows x 10 columns]
+cefepime, vancomycin                                                                                      2967
+piperacillin-tazobactam, vancomycin                                                                       1699
+cefepime                                                                                                  1645
+vancomycin                                                                                                1634
+meropenem, vancomycin                                                                                     1317
+                                                                                                          ...
+cefazolin, linezolid                                                                                         1
+cefepime, ceftazidime, levofloxacin, tobramycin sulfate, vancomycin                                          1
+azithromycin, ciprofloxacin iv, metronidazole (flagyl), nafcillin, piperacillin-tazobactam, vancomycin       1
+ampicillin-sulbactam, ceftazidime, doxycycline hyclate, vancomycin                                           1
+cefepime, ciprofloxacin iv, gentamicin sulfate, piperacillin-tazobactam, vancomycin                          1
+Name: antibiotics_clean, Length: 1066, dtype: int64
+1     4316
+2     3780
+3     3255
+4     2992
+5     2330
+7     1876
+6     1860
+8     1416
+9      855
+10     760
+11     517
+13     390
+14     280
+12     276
+15     225
+16      96
+18      90
+27      81
+21      63
+23      46
+20      40
+19      38
+17      34
+31      31
+30      30
+24      24
+Name: treatment_length, dtype: int64
+       Unnamed: 0  subject_id   hadm_id   stay_id icd_code       date                                antibiotics  consecutive  treatment_length                    antibiotics_clean
+0               0    10004733  27411876  39635619    99731 2174-12-04  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+1               1    10004733  27411876  39635619    99731 2174-12-05  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+2               2    10004733  27411876  39635619    99731 2174-12-06  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+3               3    10004733  27411876  39635619    99731 2174-12-07  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+4               4    10004733  27411876  39635619    99731 2174-12-08  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+...           ...         ...       ...       ...      ...        ...                                        ...          ...               ...                                  ...
+25696       25696    19997367  20617667  35616526    99731 2126-05-07                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25697       25697    19997367  20617667  35616526    99731 2126-05-08                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25698       25698    19997367  20617667  35616526    99731 2126-05-09                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25699       25699    19997367  20617667  35616526    99731 2126-05-10                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25700       25700    19997367  20617667  35616526    99731 2126-05-11                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+
+[14743 rows x 10 columns]
+3     2013
+2     1952
+4     1940
+5     1380
+7     1302
+1     1273
+6     1230
+8      984
+9      558
+10     530
+11     363
+13     273
+15     180
+12     180
+14     154
+16      96
+27      81
+18      72
+21      42
+31      31
+30      30
+23      23
+20      20
+19      19
+17      17
+Name: treatment_length, dtype: int64
+4     516
+3     492
+2     414
+5     245
+7     238
+1     224
+6     210
+8     208
+10    130
+9      90
+15     60
+13     52
+14     42
+12     24
+11     22
+Name: treatment_length, dtype: int64
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Generic libraries</span>
+ <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+ <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+ <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+ <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+ <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+ <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+ <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+ <span class="c1"># -----------------------------</span>
+ <span class="c1"># Constants</span>
+ <span class="c1"># -----------------------------</span>
+ <span class="c1"># Path</span>
+ <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/home/wb1115/PycharmProjects/ICU_Antibiotic_Cessation/ICU_VAP_antibiotics_treatment_length.csv&#39;</span>
+ <span class="c1">#path = &#39;/home/wb1115/PycharmProjects/ICU_Antibiotic_Cessation/ICU_SEPSIS_antibiotics_treatment_length.csv&#39;</span>
+
+ <span class="c1"># -----------------------------</span>
+ <span class="c1"># Load data</span>
+ <span class="c1"># -----------------------------</span>
+ <span class="c1"># Read data</span>
+ <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+ <span class="c1">#print(data.info())</span>
+ <span class="c1">#print(data)</span>
+
+ <span class="c1"># -----------------------------</span>
+ <span class="c1"># Format data</span>
+ <span class="c1"># -----------------------------</span>
+
+ <span class="n">cleaned_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;antibiotics&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;^\[.|.\]$&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+ <span class="n">cleaned_df</span> <span class="o">=</span> <span class="n">cleaned_df</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+ <span class="c1">#print(cleaned_df)</span>
+ <span class="n">data</span><span class="p">[</span><span class="s1">&#39;antibiotics_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cleaned_df</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+ <span class="n">counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;antibiotics_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+ <span class="n">counts1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">counts1</span><span class="p">)</span>
+
+ <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;antibiotics_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;antibiotics_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">400</span><span class="p">]</span>
+ <span class="n">filtered_df2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;antibiotics_clean&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;cefepime, vancomycin&#39;</span><span class="p">]</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">)</span>
+ <span class="n">counts2</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+ <span class="n">counts3</span> <span class="o">=</span> <span class="n">filtered_df2</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">counts2</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">counts3</span><span class="p">)</span>
+
+ <span class="n">overall_count_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">:</span> <span class="n">counts1</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">counts1</span><span class="o">.</span><span class="n">values</span><span class="p">})</span>
+ <span class="n">most_common_count_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">:</span> <span class="n">counts2</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">counts2</span><span class="o">.</span><span class="n">values</span><span class="p">})</span>
+ <span class="n">cefepime_vancomycin_count_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">:</span> <span class="n">counts3</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">counts3</span><span class="o">.</span><span class="n">values</span><span class="p">})</span>
+
+ <span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;count_normalized&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">]</span>
+ <span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;count_normalized&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">]</span>
+ <span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;count_normalized&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">]</span>
+
+ <span class="n">overall_count_data</span> <span class="o">=</span> <span class="n">overall_count_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">])</span>
+ <span class="n">most_common_count_data</span> <span class="o">=</span> <span class="n">most_common_count_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">])</span>
+ <span class="n">cefepime_vancomycin_count_data</span> <span class="o">=</span> <span class="n">cefepime_vancomycin_count_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">])</span>
+
+ <span class="c1">#print(count_data)</span>
+
+ <span class="c1"># -----------------------------</span>
+ <span class="c1"># Plot data</span>
+ <span class="c1"># -----------------------------</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;count_normalized&#39;</span><span class="p">])</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treatment length For All Antibiotics&quot;</span><span class="p">)</span> <span class="c1">#title</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Treatment length (days)&quot;</span><span class="p">)</span> <span class="c1">#x label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count (normalized)&quot;</span><span class="p">)</span> <span class="c1">#y label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">overall_count_data</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treatment length For All Antibiotics&quot;</span><span class="p">)</span> <span class="c1">#title</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Treatment length (days)&quot;</span><span class="p">)</span> <span class="c1">#x label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span> <span class="c1">#y label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;count_normalized&#39;</span><span class="p">])</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treatment length For Most Common Antibiotics&quot;</span><span class="p">)</span> <span class="c1">#title</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Treatment length (days)&quot;</span><span class="p">)</span> <span class="c1">#x label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count (normalized)&quot;</span><span class="p">)</span> <span class="c1">#y label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">most_common_count_data</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treatment length For Most Common Antibiotics&quot;</span><span class="p">)</span> <span class="c1">#title</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Treatment length (days)&quot;</span><span class="p">)</span> <span class="c1">#x label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span> <span class="c1">#y label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;count_normalized&#39;</span><span class="p">])</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treatment length For cefepime_vancomycin&quot;</span><span class="p">)</span> <span class="c1">#title</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Treatment length (days)&quot;</span><span class="p">)</span> <span class="c1">#x label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count (normalized)&quot;</span><span class="p">)</span> <span class="c1">#y label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;treatment_length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">cefepime_vancomycin_count_data</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treatment length For cefepime_vancomycin&quot;</span><span class="p">)</span> <span class="c1">#title</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Treatment length (days)&quot;</span><span class="p">)</span> <span class="c1">#x label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span> <span class="c1">#y label</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.507 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-plot-variability-of-treatment-duration-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/2d0adfbccf6d661b6f36c72af7bce19b/plot_Variability of treatment duration.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_Variability</span> <span class="pre">of</span> <span class="pre">treatment</span> <span class="pre">duration.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/384de568668d48608377de4abbc63e9d/plot_Variability of treatment duration.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_Variability</span> <span class="pre">of</span> <span class="pre">treatment</span> <span class="pre">duration.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="plot_antibiotic_analysis.html" class="btn btn-neutral float-right" title="Antibiotic analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_Data.html" class="btn btn-neutral float-left" title="MIMIC DF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, &lt;Full name&gt;.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

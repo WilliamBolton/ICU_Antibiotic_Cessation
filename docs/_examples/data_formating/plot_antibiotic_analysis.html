@@ -42,7 +42,8 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Variability of treatment duration" href="plot_Variability%20of%20treatment%20duration.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,8 +93,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/setup.html">Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Example Galleries</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">The tutorial gallery</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">The tutorial gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main_full.html">Grouping Antibiotics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one_patient.html">One Patient example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_Data.html">MIMIC DF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_Variability%20of%20treatment%20duration.html">Variability of treatment duration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Antibiotic analysis</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -142,13 +150,15 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="index.html">The tutorial gallery</a> &raquo;</li>
+        
       <li>Antibiotic analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/_examples/data_formating/antibiotic_analysis.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/_examples/data_formating/plot_antibiotic_analysis.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,11 +173,144 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-antibiotic-analysis-py"><span class="std std-ref">here</span></a>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-plot-antibiotic-analysis-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="antibiotic-analysis">
-<span id="sphx-glr-examples-data-formating-antibiotic-analysis-py"></span><h1>Antibiotic analysis<a class="headerlink" href="#antibiotic-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-examples-data-formating-plot-antibiotic-analysis-py"></span><h1>Antibiotic analysis<a class="headerlink" href="#antibiotic-analysis" title="Permalink to this headline">¶</a></h1>
+<ul class="sphx-glr-horizontal">
+<li><img alt="plot antibiotic analysis" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_antibiotic_analysis_001.png" />
+</li>
+<li><img alt="plot antibiotic analysis" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_antibiotic_analysis_002.png" />
+</li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;cefepime&#39;, &#39;vancomycin&#39;]                                                                            2967
+[&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]                                                             1699
+[&#39;cefepime&#39;]                                                                                          1645
+[&#39;vancomycin&#39;]                                                                                        1634
+[&#39;meropenem&#39;, &#39;vancomycin&#39;]                                                                           1317
+                                                                                                      ...
+[&#39;cefazolin&#39;, &#39;ceftazidime&#39;, &#39;ciprofloxacin iv&#39;, &#39;vancomycin&#39;]                                           1
+[&#39;cefepime&#39;, &#39;ceftazidime&#39;, &#39;levofloxacin&#39;, &#39;sulfamethoxazole-trimethoprim&#39;, &#39;vancomycin&#39;]               1
+[&#39;nafcillin&#39;, &#39;piperacillin-tazobactam na&#39;, &#39;tobramycin sulfate&#39;, &#39;vancomycin&#39;]                          1
+[&#39;cefepime&#39;, &#39;ceftriaxone&#39;, &#39;meropenem&#39;, &#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]                        1
+[&#39;cefepime&#39;, &#39;ceftazidime&#39;, &#39;ceftriaxone&#39;, &#39;ciprofloxacin iv&#39;, &#39;tobramycin sulfate&#39;, &#39;vancomycin&#39;]       1
+Name: antibiotics, Length: 1066, dtype: int64
+          subject_id  hadm_id  icd_code  date  antibiotics
+stay_id
+30001555           1        1         1     6            1
+30004018           1        1         1     9            1
+30006983           1        1         1    39            7
+30007565           1        1         1    19            6
+30009339           1        1         1    17            4
+...              ...      ...       ...   ...          ...
+39969187           1        1         1    11            3
+39970976           1        1         1     6            1
+39986206           1        1         1    41            9
+39990055           1        1         1     2            1
+39996867           1        1         1    30            7
+
+[1955 rows x 5 columns]
+Mean n of antibiotics:
+4.456265984654731
+Median n of antibiotics:
+4.0
+Mean length of stay:
+13.146291560102302
+Median length of stay:
+11.0
+       subject_id   hadm_id   stay_id icd_code       date                                antibiotics  consecutive
+0        10004733  27411876  39635619    99731 2174-12-04  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1
+1        10004733  27411876  39635619    99731 2174-12-05  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1
+2        10004733  27411876  39635619    99731 2174-12-06  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1
+3        10004733  27411876  39635619    99731 2174-12-07  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1
+4        10004733  27411876  39635619    99731 2174-12-08  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1
+...           ...       ...       ...      ...        ...                                        ...          ...
+25696    19997367  20617667  35616526    99731 2126-05-07                            [&#39;ceftriaxone&#39;]            1
+25697    19997367  20617667  35616526    99731 2126-05-08                            [&#39;ceftriaxone&#39;]            1
+25698    19997367  20617667  35616526    99731 2126-05-09                            [&#39;ceftriaxone&#39;]            1
+25699    19997367  20617667  35616526    99731 2126-05-10                            [&#39;ceftriaxone&#39;]            1
+25700    19997367  20617667  35616526    99731 2126-05-11                            [&#39;ceftriaxone&#39;]            1
+
+[25701 rows x 7 columns]
+       subject_id   hadm_id   stay_id icd_code       date                                antibiotics  consecutive  treatment_length
+0        10004733  27411876  39635619    99731 2174-12-04  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10
+1        10004733  27411876  39635619    99731 2174-12-05  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10
+2        10004733  27411876  39635619    99731 2174-12-06  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10
+3        10004733  27411876  39635619    99731 2174-12-07  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10
+4        10004733  27411876  39635619    99731 2174-12-08  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10
+...           ...       ...       ...      ...        ...                                        ...          ...               ...
+25696    19997367  20617667  35616526    99731 2126-05-07                            [&#39;ceftriaxone&#39;]            1                 6
+25697    19997367  20617667  35616526    99731 2126-05-08                            [&#39;ceftriaxone&#39;]            1                 6
+25698    19997367  20617667  35616526    99731 2126-05-09                            [&#39;ceftriaxone&#39;]            1                 6
+25699    19997367  20617667  35616526    99731 2126-05-10                            [&#39;ceftriaxone&#39;]            1                 6
+25700    19997367  20617667  35616526    99731 2126-05-11                            [&#39;ceftriaxone&#39;]            1                 6
+
+[25701 rows x 8 columns]
+Mean antibiotic treatment length:
+1.8602251407129455
+Median antibiotic treatment length:
+1.0
+0        piperacillin-tazobactam, vancomycin
+1        piperacillin-tazobactam, vancomycin
+2        piperacillin-tazobactam, vancomycin
+3        piperacillin-tazobactam, vancomycin
+4        piperacillin-tazobactam, vancomycin
+                        ...
+25696                            ceftriaxone
+25697                            ceftriaxone
+25698                            ceftriaxone
+25699                            ceftriaxone
+25700                            ceftriaxone
+Name: antibiotics, Length: 25701, dtype: object
+       subject_id   hadm_id   stay_id icd_code       date                                antibiotics  consecutive  treatment_length                    antibiotics_clean
+0        10004733  27411876  39635619    99731 2174-12-04  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+1        10004733  27411876  39635619    99731 2174-12-05  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+2        10004733  27411876  39635619    99731 2174-12-06  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+3        10004733  27411876  39635619    99731 2174-12-07  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+4        10004733  27411876  39635619    99731 2174-12-08  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+...           ...       ...       ...      ...        ...                                        ...          ...               ...                                  ...
+25696    19997367  20617667  35616526    99731 2126-05-07                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25697    19997367  20617667  35616526    99731 2126-05-08                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25698    19997367  20617667  35616526    99731 2126-05-09                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25699    19997367  20617667  35616526    99731 2126-05-10                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25700    19997367  20617667  35616526    99731 2126-05-11                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+
+[25701 rows x 9 columns]
+       subject_id   hadm_id   stay_id icd_code       date                                antibiotics  consecutive  treatment_length                    antibiotics_clean
+0        10004733  27411876  39635619    99731 2174-12-04  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+1        10004733  27411876  39635619    99731 2174-12-05  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+2        10004733  27411876  39635619    99731 2174-12-06  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+3        10004733  27411876  39635619    99731 2174-12-07  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+4        10004733  27411876  39635619    99731 2174-12-08  [&#39;piperacillin-tazobactam&#39;, &#39;vancomycin&#39;]            1                10  piperacillin-tazobactam, vancomycin
+...           ...       ...       ...      ...        ...                                        ...          ...               ...                                  ...
+25696    19997367  20617667  35616526    99731 2126-05-07                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25697    19997367  20617667  35616526    99731 2126-05-08                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25698    19997367  20617667  35616526    99731 2126-05-09                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25699    19997367  20617667  35616526    99731 2126-05-10                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+25700    19997367  20617667  35616526    99731 2126-05-11                            [&#39;ceftriaxone&#39;]            1                 6                          ceftriaxone
+
+[14743 rows x 9 columns]
+means:
+                               antibiotics_clean  treatment_length
+0                                      cefazolin          5.310048
+1                                       cefepime          5.660182
+2         cefepime, ciprofloxacin iv, vancomycin          4.534351
+3   cefepime, metronidazole (flagyl), vancomycin          4.579151
+4                           cefepime, vancomycin          5.126727
+5                        ceftazidime, vancomycin          5.172249
+6                                    ceftriaxone          5.430440
+7                                      meropenem          7.235669
+8                          meropenem, vancomycin          6.037206
+9                        piperacillin-tazobactam          6.529010
+10           piperacillin-tazobactam, vancomycin          5.628605
+11                                    vancomycin          6.471236
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  7
   8
   9
@@ -555,13 +698,13 @@ to download the full example code</p>
  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-antibiotic-analysis-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.709 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-plot-antibiotic-analysis-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/d603ee7e204a3df0105c5150bd81d58b/antibiotic_analysis.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">antibiotic_analysis.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/03a29403b7b21e6f404f1c08b53254cb/plot_antibiotic_analysis.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_antibiotic_analysis.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/e1a9e9506aafecfb79e10cb2014f37d4/antibiotic_analysis.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">antibiotic_analysis.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/6381ee22943f5eb52e91276f7827bf77/plot_antibiotic_analysis.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_antibiotic_analysis.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -572,6 +715,9 @@ to download the full example code</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="plot_Variability%20of%20treatment%20duration.html" class="btn btn-neutral float-left" title="Variability of treatment duration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

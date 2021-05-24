@@ -42,9 +42,7 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="MIMIC DF" href="plot_Data.html" />
-    <link rel="prev" title="Grouping Antibiotics" href="main_full.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,15 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/setup.html">Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Example Galleries</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">The tutorial gallery</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="main_full.html">Grouping Antibiotics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">One Patient example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_Data.html">MIMIC DF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_Variability%20of%20treatment%20duration.html">Variability of treatment duration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_antibiotic_analysis.html">Antibiotic analysis</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">The tutorial gallery</a></li>
 </ul>
 
             
@@ -151,15 +142,13 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html">The tutorial gallery</a> &raquo;</li>
-        
       <li>One Patient example</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/_examples/data_formating/one_patient.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/_examples/data_formating/plot_one_patient.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,11 +163,32 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-one-patient-py"><span class="std std-ref">here</span></a>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-formating-plot-one-patient-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="one-patient-example">
-<span id="sphx-glr-examples-data-formating-one-patient-py"></span><h1>One Patient example<a class="headerlink" href="#one-patient-example" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-examples-data-formating-plot-one-patient-py"></span><h1>One Patient example<a class="headerlink" href="#one-patient-example" title="Permalink to this headline">¶</a></h1>
+<div class="sphx-glr-script-out highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;/home/wb1115/ICU_Antibiotic_Cessation/main/examples/data_formating/plot_one_patient.py&quot;</span>, line <span class="m">14</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="n">ICU</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/home/wb1115/PycharmProjects/ICU_Antibiotic_Cessation/ICU_diagnoses_antibiotics_microbiology.csv&quot;</span><span class="p">)</span>
+  File <span class="nb">&quot;/home/wb1115/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py&quot;</span>, line <span class="m">686</span>, in <span class="n">read_csv</span>
+    <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+  File <span class="nb">&quot;/home/wb1115/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py&quot;</span>, line <span class="m">452</span>, in <span class="n">_read</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+  File <span class="nb">&quot;/home/wb1115/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py&quot;</span>, line <span class="m">946</span>, in <span class="n">__init__</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+  File <span class="nb">&quot;/home/wb1115/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py&quot;</span>, line <span class="m">1178</span>, in <span class="n">_make_engine</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+  File <span class="nb">&quot;/home/wb1115/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py&quot;</span>, line <span class="m">2008</span>, in <span class="n">__init__</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+  File <span class="nb">&quot;pandas/_libs/parsers.pyx&quot;</span>, line <span class="m">382</span>, in <span class="n">pandas._libs.parsers.TextReader.__cinit__</span>
+  File <span class="nb">&quot;pandas/_libs/parsers.pyx&quot;</span>, line <span class="m">674</span>, in <span class="n">pandas._libs.parsers.TextReader._setup_parser_source</span>
+<span class="gr">FileNotFoundError</span>: <span class="n">[Errno 2] No such file or directory: &#39;/home/wb1115/PycharmProjects/ICU_Antibiotic_Cessation/ICU_diagnoses_antibiotics_microbiology.csv&#39;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
  7
  8
@@ -232,13 +242,13 @@ to download the full example code</p>
  <span class="n">one_patient_condensed</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;One_patient_condensed_11803145.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-one-patient-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.010 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-formating-plot-one-patient-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/ebd88c7d8ded934358277af12923cc59/one_patient.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">one_patient.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/c5fe72bffb56936cf6d66b146118e2ba/plot_one_patient.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_one_patient.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/0365e05968190cc830119485f5c5aa70/one_patient.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">one_patient.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/ed0f4e5ff5e26f74d48805ac57570a0c/plot_one_patient.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_one_patient.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -249,10 +259,6 @@ to download the full example code</p>
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="plot_Data.html" class="btn btn-neutral float-right" title="MIMIC DF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="main_full.html" class="btn btn-neutral float-left" title="Grouping Antibiotics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 
