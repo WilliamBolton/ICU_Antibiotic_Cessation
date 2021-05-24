@@ -18,7 +18,7 @@ Welcome to fyp2020-username's documentation!
    :caption: Example Galleries
    :hidden:
 
-   _examples/tutorial/index
+   _examples/data_formating/index
 
 Indices and tables
 ==================
